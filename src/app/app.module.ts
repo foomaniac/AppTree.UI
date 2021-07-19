@@ -10,13 +10,15 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { MenuModule } from 'primeng/menu';
 import { HomeComponent } from './home/home.component';
 import {TableModule} from 'primeng/table';
+import { ApplicationDetailsComponent } from './application-details/application-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApplicationsListComponent,
     NavMenuComponent,
-    HomeComponent
+    HomeComponent,
+    ApplicationDetailsComponent
   ],
   imports: [
     BrowserModule,
