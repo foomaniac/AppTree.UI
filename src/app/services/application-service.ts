@@ -14,5 +14,10 @@ export class ApplicationService {
   public getAllApplications(){
       return this.http.get<Application[]>('https://localhost:5001/api/v1/Applications');
   }
+
+  public getApplication(id: number)
+  {
+    return this.http.get<Application>(`https://localhost:5001/api/v1/Applications/${id}`);
+  }
   
 }
