@@ -9,8 +9,11 @@ import { DataViewModule } from 'primeng/dataview';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { MenuModule } from 'primeng/menu';
 import { HomeComponent } from './home/home.component';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { ApplicationDetailsComponent } from './application-details/application-d
     ApplicationsListComponent,
     NavMenuComponent,
     HomeComponent,
-    ApplicationDetailsComponent
+    ApplicationDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +31,11 @@ import { ApplicationDetailsComponent } from './application-details/application-d
     DataViewModule,
     MenuModule,
     TableModule,
+    CardModule,
+    InputTextModule,
+    ButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

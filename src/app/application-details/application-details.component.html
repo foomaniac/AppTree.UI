@@ -1,1 +1,40 @@
-<h2>Application Details</h2>>
+<h2>Application Details</h2>
+
+<p-card [header]="application?.name" [style]="{ 'margin-bottom': '2em' }">
+  <div class="p-inputgroup p-m-2">
+    <span class="p-ml-2"><strong>Summary:</strong> </span
+    ><span class="p-ml-2">{{ application?.summary }}</span>
+  </div>
+  <div class="p-inputgroup p-m-2">
+    <span class="p-ml-2"><strong>Repository: </strong></span
+    ><span class="p-ml-2">{{ application?.repository }}</span>
+  </div>
+</p-card>
+
+<h3>Dependencies</h3>
+
+<p-table [value]="application?.dependencies" [paginator]="true" [rows]="10">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-app>
+    <tr>
+      <td>{{ app.name }}</td>
+      <td>{{ app.type }}</td>
+      <td>
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Details"
+          class="p-button-text"
+          [routerLink]="['/application-detail', app.applicationId]"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

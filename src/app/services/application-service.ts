@@ -3,21 +3,20 @@ import { Injectable } from '@angular/core';
 import { Application } from '../models/application';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApplicationService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { 
-
+  public getAllApplications() {
+    return this.http.get<Application[]>(
+      'https://localhost:5001/api/v1/Applications'
+    );
   }
 
-  public getAllApplications(){
-      return this.http.get<Application[]>('https://localhost:5001/api/v1/Applications');
+  public getApplication(id: number) {
+    var url = `https://localhost:5001/api/v1/Applications/${id}`;
+    console.log(url);
+    return this.http.get<Application>(url);
   }
-
-  public getApplication(id: number)
-  {
-    return this.http.get<Application>(`https://localhost:5001/api/v1/Applications/${id}`);
-  }
-  
 }
